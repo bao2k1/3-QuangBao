@@ -4,10 +4,10 @@ const userController = require("../Controllers/UserController");
 //GetAllUsers
 userRouter.get("/", userController.getAllUsers);
 //find user by name and age
-userRouter.get("/find/", userController.getUserByNameAndAge);
+userRouter.get("/find-by-name-and-age/", userController.getUserByNameAndAge);
 //createUser
-userRouter.post("/create-user", userController.createUser);
-userRouter.post("/create-many-users", userController.createManyUsers);
+userRouter.post("/", userController.createUser);
+userRouter.post("/import-many-users", userController.createManyUsers);
 //GetUser
 userRouter.get("/:userId", userController.getUserById);
 
