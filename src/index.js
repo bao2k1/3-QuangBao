@@ -1,5 +1,5 @@
 const express = require("express");
-
+const {notFound,errorHandler} = require("./Middleware/Error");
 const userRouter = require("./Routes/UserRoute");
 const orderRouter = require("./Routes/OrderRoute");
 const productRouter = require("./Routes/ProductRoute");
@@ -15,7 +15,12 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/orders", orderRouter);
 app.use("/api/v1/products", productRouter);
 
-
+// app.use((err,req, res, next) => {
+//   console.log(err);
+//   res.json({message:"something went wrong"});
+// })
+app.use(notFound);
+app.use(errorHandler);
 // app.get("/message/:msg", (req, res) => {
 //   let msg = req.params.msg;
 //   console.log("Message: " + msg);

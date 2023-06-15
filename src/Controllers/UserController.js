@@ -19,7 +19,8 @@ exports.getUserByNameAndAge = (req, res) => {
     age,
   });
 };
-exports.createUser = (req, res) => {
+
+exports.createUser =  (req, res) => {
   const { username, password, age } = req.body;
   res.send({
     username,
