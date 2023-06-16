@@ -56,6 +56,7 @@ exports.getDataByCountry=(req, res)=>{
         const importsFilteredData = importsData.children.flatMap(
           (item) => item.children
         );
+        
         // console.log(importsFilteredData)
         const importsResult = importsFilteredData.find(
           (item) => item.country && item.country.toLowerCase() === country
