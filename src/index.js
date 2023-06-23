@@ -4,6 +4,8 @@ const userRouter = require("./Routes/UserRoute");
 const orderRouter = require("./Routes/OrderRoute");
 const productRouter = require("./Routes/ProductRoute");
 const countryRouter = require("./Routes/CountryRouter");
+const generateRouter = require("./Routes/GenerateRouter");
+const exerciseRouter = require("./Routes/ExerciseRouter");
 const app = express();
 const port = 8000;
 app.use(express.json());
@@ -14,7 +16,8 @@ app.use("/api/v1/countries", countryRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/orders", orderRouter);
 app.use("/api/v1/products", productRouter);
-
+app.use("/api/v1/generate", generateRouter);
+app.use("/api/v1/exercises",exerciseRouter);
 // app.use((err,req, res, next) => {
 //   console.log(err);
 //   res.json({message:"something went wrong"});
