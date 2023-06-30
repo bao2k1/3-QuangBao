@@ -1,7 +1,7 @@
 exports.validateUser = (req, res,next)=>{
     const { username, password } = req.body;
     
-    console.log(username);
+    // console.log(username);
       if (username===undefined||username==="") {
         res.status(400);
         throw new Error("User name is required");

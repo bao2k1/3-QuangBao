@@ -22,11 +22,12 @@ exports.getUserByNameAndAge = (req, res) => {
 
 exports.createUser =  (req, res) => {
   const { username, password, age } = req.body;
-  res.send({
-    username,
-    password,
-    age,
-  });
+  res.status(201).json({ message: "User Added" });
+  // res.send({
+  //   username,
+  //   password,
+  //   age,
+  // });
   // res.send("ok")
 };
 exports.createManyUsers = (req, res) => {
